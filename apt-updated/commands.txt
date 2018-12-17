@@ -1,0 +1,6 @@
+docker build . \
+  -t jeffreybbrown/apt-updated \
+  | tee logs/"build-log.`date`.txt"
+
+docker run --name empty -it -v /home/jeff/docker-gui/supercollider:/mnt    \
+  jeffreybbrown/apt-updated

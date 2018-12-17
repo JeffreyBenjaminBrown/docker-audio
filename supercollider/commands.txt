@@ -1,0 +1,16 @@
+docker build . \
+  -t jeffreybbrown/supercollilder:sc_and_some_kx    \
+  | tee logs/"build-log.`date`.txt"
+
+docker run --name sc -it -v /home/jeff/docker-gui/supercollider:/mnt    \
+  jeffreybbrown/supercollilder:sc
+
+# Doesn't work, even with sudo
+docker run --name sc -it -v /home/jeff/docker-gui/supercollider:/mnt \
+  --volume=/dev/shm:/dev/shm:rw                                      \
+  jeffreybbrown/supercollilder:sc                                    
+
+docker stop sc && docker rm sc
+
+Might also need this:
+  --user=1000                                                        \

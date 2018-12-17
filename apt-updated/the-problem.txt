@@ -1,0 +1,17 @@
+root@3866cd3e5180:/# apt-get -s install jackd1 jackd2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ jackd1 : Conflicts: jack-daemon
+ jackd2 : Depends: libjack-jackd2-0 (= 1.9.12~dfsg-2) but it is not going to be installed
+          Conflicts: jack-daemon
+          Recommends: jackd2-firewire but it is not going to be installed
+E: Unable to correct problems, you have held broken packages.
+root@3866cd3e5180:/# 
