@@ -22,6 +22,10 @@ RUN dpkg -i kxstudio-repos_9.5.1~kxstudio3_all.deb
 RUN apt update
 RUN apt install kxstudio-meta-audio -y
 
-# It breaks here
-RUN apt install kxstudio-meta-audio-plugins -y
-RUN apt install kxstudio-meta-restricted-extras -y
+# This can be run interactively but not via `docker build`.
+# I did that, saving it as
+# `jeffreybbrown/supercollilder:sc_and_kx_thru_restricted_extras`.
+# RUN apt install kxstudio-meta-restricted-extras -y
+
+# This won't run.
+# RUN apt install kxstudio-meta-audio-plugins -y
